@@ -1,9 +1,6 @@
 
 ---
 
-# `IP-Addressing.md`
-
-```markdown
 # IP Addressing
 
 Plan d'adressage IP de l'infrastructure **Sanji Enterprise Lab**.
