@@ -1,83 +1,78 @@
-# 🏠 Sanji Homelab
+# Sanji Enterprise Lab
 
-> Enterprise Systems & Network Laboratory
+> Enterprise Systems & Network Administration Laboratory
 
-> 🚧 Work in Progress
+## Présentation
 
-## 📖 About
+Sanji Enterprise Lab est un environnement de laboratoire informatique personnel destiné à reproduire une infrastructure d'entreprise.
 
-Sanji Homelab is my personal infrastructure project designed to improve my skills as a future **System & Network Administrator**.
+Le projet a pour objectif de développer et mettre en pratique des compétences en administration systèmes et réseaux dans un environnement contrôlé.
 
-The project simulates a small business infrastructure using enterprise best practices including:
+La priorité du projet est l'administration des systèmes et des réseaux. La cybersécurité est abordée comme une compétence complémentaire à travers la sécurisation, la supervision et l'analyse de l'infrastructure.
 
-- Windows Server
+---
+
+## Objectifs
+
+- Administrer des systèmes Windows et Linux
+- Mettre en place une infrastructure réseau
+- Administrer des équipements réseau
+- Mettre en place Active Directory
+- Configurer DNS et DHCP
+- Mettre en place une segmentation réseau avec des VLAN
+- Administrer un environnement de virtualisation
+- Mettre en place une solution de supervision
+- Gérer les sauvegardes
+- Administrer les accès et les habilitations
+- Automatiser certaines tâches d'administration
+- Mettre en place des solutions de sécurité réseau
+- Documenter les configurations et les interventions
+
+---
+
+## Infrastructure
+
+### Matériel
+
+| Équipement | Rôle |
+|------------|------|
+| HP EliteBook 840 G5 | Hyperviseur Hyper-V |
+| TP-Link TL-WR802N V4 | Accès réseau du laboratoire |
+| TP-Link Omada ES205G | Switch principal |
+| Netgear FVS338 | Pare-feu |
+| HP ProCurve 2910al-24G | Switch de laboratoire |
+| Équipements Cisco | Apprentissage réseau |
+
+Le matériel peut évoluer au fur et à mesure du développement du laboratoire.
+
+---
+
+## Virtualisation
+
+L'environnement de simulation d'entreprise utilise **Microsoft Hyper-V**.
+
+Les différentes machines virtuelles seront utilisées pour reproduire les services d'une infrastructure informatique d'entreprise.
+
+Exemples de services prévus :
+
 - Active Directory
-- Proxmox VE
-- Linux Servers
-- Docker
-- Networking
-- Monitoring
-- Backup
-- Documentation
-
-Every deployment is fully documented with:
-
-- Technical documentation
-- Network diagrams
-- Screenshots
-- Validation procedures
-- Rollback procedures
-- Risk assessment
+- DNS
+- DHCP
+- Serveurs Windows
+- Serveurs Linux
+- Supervision
+- GLPI
+- Base de données
+- Services Web
+- Sauvegarde
 
 ---
 
-## 🏗️ Infrastructure
+## Réseau
 
-```
-Internet
-    │
-ISP Router
-    │
-RTR-01 (TP-Link WR802N)
-    │
-SW-01 (TP-Link Omada)
-    ├── FW-01
-    ├── SRV-HV01
-    └── SRV-PI01
-```
+Le laboratoire utilise un réseau distinct du réseau domestique afin d'éviter les conflits d'adressage.
 
----
+Le réseau du laboratoire utilise actuellement :
 
-## 📂 Repository Structure
-
-```
-docs/
-reports/
-images/
-diagrams/
-configs/
-scripts/
-```
-
----
-
-## 📚 Documentation
-
-| ID | Document | Status |
-|----|----------|--------|
-| SHL-NET-001 | TP-Link WR802N Configuration | ✅ |
-| SHL-NET-002 | TP-Link Omada Switch Configuration | ✅ |
-| SHL-PVE-001 | Proxmox Installation | ⏳ |
-| SHL-AD-001 | Active Directory Deployment | ⏳ |
-
----
-
-## 🎯 Goal
-
-Build a fully documented enterprise-like infrastructure while improving my System & Network Administration skills.
-
----
-
-**Author**
-
-Sanjiexe
+```text
+192.168.0.0/24
